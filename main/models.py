@@ -15,7 +15,7 @@ class Disciplina(models.Model):
     crit_avaliacao = models.CharField(max_length=50)
     recup_avaliacao = models.CharField(max_length=50)
     bibliografia = models.TextField(max_length=1000)
-
+    
     def __str__(self):
         return self.nome
 
@@ -26,6 +26,19 @@ class Comentario(models.Model):
     texto = models.TextField(max_length=1000)
     downVote = models.ManyToManyField(User, blank=True, related_name="downvote")
     upVote = models.ManyToManyField(User, blank=True, related_name="upvote")
+
+    def __str__(self):
+        return self.user.username
+
+
+class Avaliacao(models.Model):
+    disciplina = models.ForeignKey(Disciplina, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    notageral = models.FloatField(default=0)
+    notaCrit1 = models.FloatField(default=0)
+    notaCrit2 = models.FloatField(default=0)
+    notaCrit3 = models.FloatField(default=0)
+    notaCrit4 = models.FloatField(default=0)
 
     def __str__(self):
         return self.user.username

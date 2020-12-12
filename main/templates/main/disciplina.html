@@ -2,6 +2,14 @@
 
 <h2>{{disciplina.nome}}</h2>
 
+
+<div> Notas: </div>
+<ul>
+{% for iterador in ranges %}
+<li> {%for i in iterador%} <span>&#9733</span> {% endfor %} </li>
+{% endfor %}
+</ul>
+
 <div>
   <form action="{% url 'main:add_comentario' disciplina.id%}" method="POST">
     {% csrf_token %}
@@ -15,6 +23,56 @@
     ></textarea>
     <br />
     <input type="submit" value="Adicionar comentário" />
+  </form>
+</div>
+
+<form action="{% url 'main:add_review' disciplina.id%}" method="POST">
+    {% csrf_token %}
+
+
+<fieldset class="rating geral">
+        <input type="radio" id="star5" name="notageral" value="5" /><label for="star5"><span>&#9733</span></label>
+        <input type="radio" id="star4" name="notageral" value="4" /><label for="star4" ><span>&#9733</span></label>
+        <input type="radio" id="star3" name="notageral" value="3" /><label for="star3" ><span>&#9733</span></label>
+        <input type="radio" id="star2" name="notageral" value="2" /><label for="star2" ><span>&#9733</span></label>
+        <input type="radio" id="star1" name="notageral" value="1" /><label for="star1" ><span>&#9733</span></label>
+    </fieldset>
+    
+    <fieldset class="rating crit1">
+        <input type="radio" id="star5-crit1" name="notaCrit1" value="5" /><label for="star5-crit1" ><span>&#9733</span></label>
+        <input type="radio" id="star4-crit1" name="notaCrit1" value="4" /><label for="star4-crit1" ><span>&#9733</span></label>
+        <input type="radio" id="star3-crit1" name="notaCrit1" value="3" /><label for="star3-crit1" ><span>&#9733</span></label>
+        <input type="radio" id="star2-crit1" name="notaCrit1" value="2" /><label for="star2-crit1" ><span>&#9733</span></label>
+        <input type="radio" id="star1-crit1" name="notaCrit1" value="1" /><label for="star1-crit1" ><span>&#9733</span></label>
+    </fieldset>
+
+    <fieldset class="rating crit2">
+        <input type="radio" id="star5-crit2" name="notaCrit2" value="5" /><label for="star5-crit2" ><span>&#9733</span></label>
+        <input type="radio" id="star4-crit2" name="notaCrit2" value="4" /><label for="star4-crit2" ><span>&#9733</span></label>
+        <input type="radio" id="star3-crit2" name="notaCrit2" value="3" /><label for="star3-crit2" ><span>&#9733</span></label>
+        <input type="radio" id="star2-crit2" name="notaCrit2" value="2" /><label for="star2-crit2" ><span>&#9733</span></label>
+        <input type="radio" id="star1-crit2" name="notaCrit2" value="1" /><label for="star1-crit2" ><span>&#9733</span></label>
+    </fieldset>
+
+    <fieldset class="rating crit3">
+        <input type="radio" id="star5-crit3" name="notaCrit3" value="5" /><label for="star5-crit3" ><span>&#9733</span></label>
+        <input type="radio" id="star4-crit3" name="notaCrit3" value="4" /><label for="star4-crit3" ><span>&#9733</span></label>
+        <input type="radio" id="star3-crit3" name="notaCrit3" value="3" /><label for="star3-crit3" ><span>&#9733</span></label>
+        <input type="radio" id="star2-crit3" name="notaCrit3" value="2" /><label for="star2-crit3" ><span>&#9733</span></label>
+        <input type="radio" id="star1-crit3" name="notaCrit3" value="1" /><label for="star1-crit3" ><span>&#9733</span></label>
+    </fieldset>
+
+    <fieldset class="rating crit4">
+        <input type="radio" id="star5-crit4" name="notaCrit4" value="5" /><label for="star5-crit4" ><span>&#9733</span></label>
+        <input type="radio" id="star4-crit4" name="notaCrit4" value="4" /><label for="star4-crit4" ><span>&#9733</span></label>
+        <input type="radio" id="star3-crit4" name="notaCrit4" value="3" /><label for="star3-crit4" ><span>&#9733</span></label>
+        <input type="radio" id="star2-crit4" name="notaCrit4" value="2" /><label for="star2-crit4" ><span>&#9733</span></label>
+        <input type="radio" id="star1-crit4" name="notaCrit4" value="1" /><label for="star1-crit4" ><span>&#9733</span></label>
+    </fieldset>
+
+
+    <br/>
+    <input type="submit" value="Avaliar"/>
   </form>
 </div>
 
