@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models import Count
 
 # Create your models here.
 class Disciplina(models.Model):
@@ -17,3 +19,13 @@ class Disciplina(models.Model):
     def __str__(self):
         return self.nome
 
+
+class Comentario(models.Model):
+    disciplina = models.ForeignKey(Disciplina, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    texto = models.TextField(max_length=1000)
+    downVote = models.ManyToManyField(User, blank=True, related_name="downvote")
+    upVote = models.ManyToManyField(User, blank=True, related_name="upvote")
+
+    def __str__(self):
+        return self.user.username
