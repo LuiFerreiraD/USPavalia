@@ -2,15 +2,18 @@ from django.shortcuts import render, redirect
 #from django.http import HttpResponse
 from .models import *
 from .forms import *
+from django.db.models import Avg
 
 # Create your views here.
 def home(request):
-    todas_disciplinas = Disciplina.objects.all()
+    disciplinas = pesquisa_disciplina(request)
+
     contexto = {
-        "disciplinas": todas_disciplinas,
+        "disciplinas": disciplinas,
     }
     return render(request, 'main/index.html', contexto)
 
+    
 #pagina da disciplina
 def pagina_disciplina(request, id):
     disciplina = Disciplina.objects.get(id=id)
@@ -20,9 +23,23 @@ def pagina_disciplina(request, id):
     total_votes=Count('upVote')-Count('downVote')
     ).order_by('total_votes')
 
+    avaliacoes = Avaliacao.objects.filter(disciplina=id)    
+    mediaGeral = int(round(avaliacoes.aggregate(Avg("notageral"))["notageral__avg"]))
+    mediaCrit1 = int(round(avaliacoes.aggregate(Avg("notaCrit1"))["notaCrit1__avg"]))
+    mediaCrit2 = int(round(avaliacoes.aggregate(Avg("notaCrit2"))["notaCrit2__avg"]))
+    mediaCrit3 = int(round(avaliacoes.aggregate(Avg("notaCrit3"))["notaCrit3__avg"]))
+    mediaCrit4 = int(round(avaliacoes.aggregate(Avg("notaCrit4"))["notaCrit4__avg"]))
+
+    print(mediaGeral, mediaCrit1, mediaCrit2, mediaCrit3, mediaCrit4)
+
+    ranges = [
+        range(mediaGeral), range(mediaCrit1), range(mediaCrit2), range(mediaCrit3), range(mediaCrit4)
+    ]
+
     contexto = {
         "disciplina": disciplina,
-        "comentarios": comentarios
+        "comentarios": comentarios,
+        "ranges": ranges
     }
 
     return render(request, 'main/disciplina.html', contexto)
@@ -41,7 +58,7 @@ def add_comentario(request, id):
                 return redirect("main:disciplina", id)
         else:
             form = CommentForm()
-        return render(request, "main/details.html", {"form": form})
+        return render(request, "main:home", {"form": form})
     else:
         return redirect("accounts:login")
 
@@ -76,3 +93,39 @@ def delete_comment(request, disciplina_id, comentario_id):
         return redirect("main:disciplina", disciplina_id)
     else:
         return redirect("accounts:login")
+
+def add_review(request, disciplina_id):
+    if request.user.is_authenticated:
+        disciplina = Disciplina.objects.get(id=disciplina_id)
+        if request.method == "POST":
+            form = AvaliacaoForm(request.POST or None)
+            print(form)
+            if form.is_valid():
+                data = form.save(commit=False)
+                data.user = request.user
+                data.notageral = request.POST["notageral"]
+                data.notaCrit1 = request.POST["notaCrit1"]
+                data.notaCrit2 = request.POST["notaCrit2"]
+                data.notaCrit3 = request.POST["notaCrit3"]
+                data.notaCrit4 = request.POST["notaCrit4"]
+
+                data.disciplina = disciplina
+                data.save()
+                return redirect("main:disciplina", disciplina_id)
+        else:
+            form = AvaliacaoForm()
+        return redirect("main:disciplina", disciplina_id)
+    else:
+        return redirect("accounts:login")
+
+
+def pesquisa_disciplina(request):
+    #função auxiliar para a barra de pesquisa
+    query = request.GET.get("barra_de_pesquisa")
+    disciplinas = None
+
+    if query:
+        disciplinas = Disciplina.objects.filter(name__icontains=query)
+    else:
+        disciplinas = Disciplina.objects.all()
+    return disciplinas

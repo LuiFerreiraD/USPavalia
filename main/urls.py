@@ -21,7 +21,8 @@ app_name = "main"
 urlpatterns = [
     path('',views.home,name="home"),
     path('disciplina/<int:id>/', views.pagina_disciplina, name = "disciplina"),
-    path('add_comentario/<int:id>', views.add_comentario, name = "add_comentario"),
+    path('add_comentario/<int:id>/', views.add_comentario, name = "add_comentario"),
     path('editarcomentario/<int:disciplina_id>/<int:comentario_id>', views.edit_comment, name = "edit_comment"),
     path('deletarcomentario/<int:disciplina_id>/<int:comentario_id>', views.delete_comment, name = "delete_comment"),
+    path('add_avaliacao/<int:disciplina_id>/', views.add_review, name = "add_review"),
 ]
