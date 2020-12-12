@@ -1,4 +1,4 @@
-:root{
+:root {
   --oxfordblue: #1b2a41;
   --charcoal: #324a5f;
   --bluemunsell: #279eb3;
@@ -6,14 +6,14 @@
   --honeyellow: #feb320;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
 body {
-  font-family:'Arial';
+  font-family: "Arial";
   background-color: var(--oxfordblue);
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -22,40 +22,37 @@ body {
   border: 0;
 }
 
-.top{
-  display:flex;
+.top {
+  display: flex;
   align-items: center;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: space-around;
   height: 10%;
   width: 100%;
   background-color: var(--charcoal);
-  padding: 0;  
+  padding: 0;
 }
 
-
-.container{
+.container {
   background: yellow;
 }
 
-.logo{
+.logo {
   font-size: 42px;
   color: var(--honeyellow);
-  font-style: 'TIMES';
+  font-style: "TIMES";
 }
 
-
-.reg{
+.reg {
   color: var(--bluemunsell);
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
   font-size: 20px;
 }
 
-.reg:hover{
-  color:white;
+.reg:hover {
+  color: white;
 }
 
-<<<<<<< HEAD
 .rating {
   float: left;
 }
@@ -103,10 +100,9 @@ body {
   top: 2px;
   left: 2px;
 }
-=======
-.user{
+
+.user {
   color: var(--bluemunsell);
-  font-family: 'Helvetica';
-  font-size: 20px; 
+  font-family: "Helvetica";
+  font-size: 20px;
 }
->>>>>>> 0346fca07fbf08348aeca6f3a2b7f2aef429411f
