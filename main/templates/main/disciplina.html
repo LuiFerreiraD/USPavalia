@@ -1,33 +1,29 @@
 {% extends 'main/base.html'%} {% block content %}
 
-<h2>{{disciplina.nome}}</h2>
+<h1>{{disciplina.nome}}</h1>
+<div class=aval>
+  AVALIAÇÕES AQUI
+</div>
+
+<div class=comments>
+  {% for comentario in comentarios %}
+  <li>{{ comentario.texto }} <i> {{comentario.user.username}}</i></li>
+  {% if request.user == comentario.user %}
+  <a href="{% url 'main:edit_comment' disciplina.id comentario.id %}">Editar</a>
+  <a href="{% url 'main:delete_comment' disciplina.id comentario.id %}"
+    onclick="return confirm('Deletar comentário?')">Deletar</a>
+  {% endif%} {% endfor %}
+</div>
+
 
 <div>
   <form action="{% url 'main:add_comentario' disciplina.id%}" method="POST">
     {% csrf_token %}
     <label for="texto"> Comentário </label>
-    <textarea
-      name="texto"
-      id="texto"
-      cols="30"
-      rows="5"
-      class="form-control"
-    ></textarea>
+    <textarea name="texto" id="texto" cols="30" rows="5" class="form-control"></textarea>
     <br />
     <input type="submit" value="Adicionar comentário" />
   </form>
 </div>
 
-<div>
-  {% for comentario in comentarios %}
-  <li>{{ comentario.texto }} <i> {{comentario.user.username}}</i></li>
-  {% if request.user == comentario.user %}
-  <a href="{% url 'main:edit_comment' disciplina.id comentario.id %}">Editar</a>
-  <a
-    href="{% url 'main:delete_comment' disciplina.id comentario.id %}"
-    onclick="return confirm('Deletar comentário?')"
-    >Deletar</a
-  >
-  {% endif%} {% endfor %}
-</div>
 {% endblock %}

@@ -1,20 +1,22 @@
 {% extends 'main/base.html' %} {% block content %}
 
-
-<div class="container">
-  <h3>Entre na sua conta</h3>
+<div class="login">
   {% if error %}
   <h5 style="color: red">{{error}}</h5>
   {% endif %}
   <form action="" method="POST">
     {% csrf_token %}
-    <label for="username">Usuário</label>
-    <input type="text" placeholder="Usuário" class="form-control" name="username" />
 
-    <label for="password">Senha</label>
-    <input type="text" placeholder="Senha" class="form-control" name="password" />
+    <div>
+      <label for="username">usuário</label>
+      <input type="text" placeholder="Usuário" class="form-control" name="username" />
+    </div>
 
-    <input type="submit" value="Entrar" />
+    <div>
+      <label for="password">senha</label>
+      <input type="text" placeholder="Senha" class="form-control" name="password" />
+      <input type="submit" value="Entrar" />
+    </div>
   </form>
 </div>
 
