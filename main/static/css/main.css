@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-:root{
-=======
 :root {
->>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
   --oxfordblue: #1b2a41;
   --charcoal: #324a5f;
   --bluemunsell: #279eb3;
@@ -27,73 +22,52 @@ body {
   border: 0;
 }
 
-<<<<<<< HEAD
-.top{
-  display:flex;
-  text-align: center;
-  align-items: center;
-  flex-direction:row;
-  justify-content: space-evenly;
-=======
 .top {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
->>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
   height: 10%;
   width: 100%;
   background-color: var(--charcoal);
   padding: 0;
 }
 
-<<<<<<< HEAD
-.middle{
+.middle {
   width: 100%;
   height: 80%;
   text-align: center;
 }
 
-.bottom{
+.bottom {
   width: 100%;
   height: 10%;
   text-align: center;
 }
 
-.login{
+.login {
   padding: 10px;
   margin: 10%;
   color: white;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-=======
-.container {
-  background: yellow;
->>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
 }
 
 .logo {
   font-size: 42px;
   color: var(--honeyellow);
-<<<<<<< HEAD
-  font-family: 'Oswald';
+  font-family: "Oswald";
 }
 
-.regbox{
-  height:fit-content;
+.regbox {
+  height: fit-content;
   width: 10%;
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
 }
 
-.reg{
-=======
-  font-style: "TIMES";
-}
-
 .reg {
->>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
   color: var(--bluemunsell);
   font-family: "Helvetica";
   font-size: 20px;
@@ -125,7 +99,7 @@ body {
   text-shadow: 1px 1px #bbb, 2px 2px #666, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
 }
 .rating:not(:checked) > label:before {
-  content: &#9733;
+  content: #9733;
 }
 .rating > input:checked ~ label {
   color: #ff7700;
@@ -152,47 +126,39 @@ body {
   left: 2px;
 }
 
-<<<<<<< HEAD
-.user{
+.user {
   color: var(--honeyellow);
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
   font-size: Large;
   font-weight: bold;
 }
 
-.disc{
+.disc {
   font-size: 30px;
-  font-family: 'Comic Sans';
-  color: var(--middleblue);  
+  font-family: "Comic Sans";
+  color: var(--middleblue);
 }
 
-.busca{
+.busca {
   height: 25%;
   width: 100%;
   background-color: white;
 }
 
-h1{
+h1 {
   color: white;
 }
 
-.aval{
+.aval {
   height: 30%;
   width: 100%;
-  background-color:var(--bluemunsell);
+  background-color: var(--bluemunsell);
   padding: 5% 0px 0px 0px;
 }
 
-.comments{
+.comments {
   height: 30%;
   width: 100%;
-  background-color:var(--middleblue);
+  background-color: var(--middleblue);
   padding: 5% 0px 0px 0px;
 }
-=======
-.user {
-  color: var(--bluemunsell);
-  font-family: "Helvetica";
-  font-size: 20px;
-}
->>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
