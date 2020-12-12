@@ -1,7 +1,10 @@
 {% extends 'main/base.html'%} {% block content %}
 
-<h1>main index HTML</h1>
 
+
+<div class=busca>
+    TESTE
+</div>
 {%for disci in disciplinas%}
-<li><a href="{%url 'main:disciplina' disci.id %}">{{disci.nome}}</a></li>
+<a class=disc href="{%url 'main:disciplina' disci.id %}">{{disci.nome}}</a>
 {% endfor %} {% endblock %}

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+
+:root{
+=======
 :root {
+>>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
   --oxfordblue: #1b2a41;
   --charcoal: #324a5f;
   --bluemunsell: #279eb3;
@@ -15,38 +20,84 @@ body {
   background-color: var(--oxfordblue);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
   margin: 0;
   padding: 0;
   border: 0;
 }
 
+<<<<<<< HEAD
+.top{
+  display:flex;
+  text-align: center;
+  align-items: center;
+  flex-direction:row;
+  justify-content: space-evenly;
+=======
 .top {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
+>>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
   height: 10%;
   width: 100%;
   background-color: var(--charcoal);
   padding: 0;
 }
 
+<<<<<<< HEAD
+.middle{
+  width: 100%;
+  height: 80%;
+  text-align: center;
+}
+
+.bottom{
+  width: 100%;
+  height: 10%;
+  text-align: center;
+}
+
+.login{
+  padding: 10px;
+  margin: 10%;
+  color: white;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+=======
 .container {
   background: yellow;
+>>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
 }
 
 .logo {
   font-size: 42px;
   color: var(--honeyellow);
+<<<<<<< HEAD
+  font-family: 'Oswald';
+}
+
+.regbox{
+  height:fit-content;
+  width: 10%;
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.reg{
+=======
   font-style: "TIMES";
 }
 
 .reg {
+>>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
   color: var(--bluemunsell);
   font-family: "Helvetica";
   font-size: 20px;
+  align-content: space-between;
 }
 
 .reg:hover {
@@ -101,8 +152,47 @@ body {
   left: 2px;
 }
 
+<<<<<<< HEAD
+.user{
+  color: var(--honeyellow);
+  font-family: 'Helvetica';
+  font-size: Large;
+  font-weight: bold;
+}
+
+.disc{
+  font-size: 30px;
+  font-family: 'Comic Sans';
+  color: var(--middleblue);  
+}
+
+.busca{
+  height: 25%;
+  width: 100%;
+  background-color: white;
+}
+
+h1{
+  color: white;
+}
+
+.aval{
+  height: 30%;
+  width: 100%;
+  background-color:var(--bluemunsell);
+  padding: 5% 0px 0px 0px;
+}
+
+.comments{
+  height: 30%;
+  width: 100%;
+  background-color:var(--middleblue);
+  padding: 5% 0px 0px 0px;
+}
+=======
 .user {
   color: var(--bluemunsell);
   font-family: "Helvetica";
   font-size: 20px;
 }
+>>>>>>> afdf7bfacc476905179412c4c714c5dd7bcece7c
