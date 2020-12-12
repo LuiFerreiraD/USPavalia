@@ -1,4 +1,4 @@
-:root{
+:root {
   --oxfordblue: #1b2a41;
   --charcoal: #324a5f;
   --bluemunsell: #279eb3;
@@ -33,23 +33,23 @@ body {
   padding: 0;
 }
 
-.middle{
+.middle {
   width: 100%;
   height: 80%;
   text-align: center;
 }
 
-.bottom{
+.bottom {
   width: 100%;
   height: 10%;
   text-align: center;
 }
 
-.login{
+.login {
   padding: 10px;
   margin: 10%;
   color: white;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -57,17 +57,17 @@ body {
 .logo {
   font-size: 42px;
   color: var(--honeyellow);
-  font-family: 'Oswald';
+  font-family: "Oswald";
 }
 
-.regbox{
-  height:fit-content;
+.regbox {
+  height: fit-content;
   width: 10%;
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
 }
 
-.reg{
+.reg {
   color: var(--bluemunsell);
   font-family: "Helvetica";
   font-size: 20px;
@@ -126,39 +126,39 @@ body {
   left: 2px;
 }
 
-.user{
+.user {
   color: var(--honeyellow);
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
   font-size: Large;
   font-weight: bold;
 }
 
-.disc{
+.disc {
   font-size: 30px;
-  font-family: 'Comic Sans';
-  color: var(--middleblue);  
+  font-family: "Comic Sans";
+  color: var(--middleblue);
 }
 
-.busca{
+.busca {
   height: 25%;
   width: 100%;
   background-color: white;
 }
 
-h1{
+h1 {
   color: white;
 }
 
-.aval{
+.aval {
   height: 30%;
   width: 100%;
-  background-color:var(--bluemunsell);
+  background-color: var(--bluemunsell);
   padding: 5% 0px 0px 0px;
 }
 
-.comments{
+.comments {
   height: 30%;
   width: 100%;
-  background-color:var(--middleblue);
+  background-color: var(--middleblue);
   padding: 5% 0px 0px 0px;
 }

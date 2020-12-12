@@ -23,15 +23,27 @@ def pagina_disciplina(request, id):
     total_votes=Count('upVote')-Count('downVote')
     ).order_by('total_votes')
 
-    avaliacoes = Avaliacao.objects.filter(disciplina=id)    
-    mediaGeral = int(round(avaliacoes.aggregate(Avg("notageral"))["notageral__avg"]))
-    mediaCrit1 = int(round(avaliacoes.aggregate(Avg("notaCrit1"))["notaCrit1__avg"]))
-    mediaCrit2 = int(round(avaliacoes.aggregate(Avg("notaCrit2"))["notaCrit2__avg"]))
-    mediaCrit3 = int(round(avaliacoes.aggregate(Avg("notaCrit3"))["notaCrit3__avg"]))
-    mediaCrit4 = int(round(avaliacoes.aggregate(Avg("notaCrit4"))["notaCrit4__avg"]))
+    avaliacoes = Avaliacao.objects.filter(disciplina=id)
+    mediaGeral = avaliacoes.aggregate(Avg("notageral"))["notageral__avg"]
+    mediaCrit1 = avaliacoes.aggregate(Avg("notaCrit1"))["notaCrit1__avg"]
+    mediaCrit2 = avaliacoes.aggregate(Avg("notaCrit2"))["notaCrit2__avg"]
+    mediaCrit3 = avaliacoes.aggregate(Avg("notaCrit3"))["notaCrit3__avg"]
+    mediaCrit4 = avaliacoes.aggregate(Avg("notaCrit4"))["notaCrit4__avg"]
+
+    medias = [
+        mediaGeral, mediaCrit1, mediaCrit2, mediaCrit3, mediaCrit4
+    ]
+    averages = []
+    for media in medias:
+        if media == None:
+            averages.append(0)
+        else:
+            averages.append(int(round(media)))
+    
+    print(averages[0], averages[1])
 
     ranges = [
-        range(mediaGeral), range(mediaCrit1), range(mediaCrit2), range(mediaCrit3), range(mediaCrit4)
+        range(averages[0]), range(averages[1]), range(averages[2]), range(averages[3]), range(averages[4])
     ]
 
     contexto = {
