@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %} {% block content %}
 
+
 <div class="container">
   <h3>Entre na sua conta</h3>
   {% if error %}
@@ -8,20 +9,10 @@
   <form action="" method="POST">
     {% csrf_token %}
     <label for="username">Usuário</label>
-    <input
-      type="text"
-      placeholder="Usuário"
-      class="form-control"
-      name="username"
-    />
+    <input type="text" placeholder="Usuário" class="form-control" name="username" />
 
     <label for="password">Senha</label>
-    <input
-      type="text"
-      placeholder="Senha"
-      class="form-control"
-      name="password"
-    />
+    <input type="text" placeholder="Senha" class="form-control" name="password" />
 
     <input type="submit" value="Entrar" />
   </form>

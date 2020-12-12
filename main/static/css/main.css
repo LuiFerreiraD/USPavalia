@@ -1,7 +1,62 @@
+:root{
+  --oxfordblue: #1b2a41;
+  --charcoal: #324a5f;
+  --bluemunsell: #279eb3;
+  --middleblue: #5cc6d7;
+  --honeyellow: #feb320;
+}
+
+a{
+  text-decoration: none;
+}
+
 body {
-  color: #949399;
-  background-image: linear-gradient(225deg, black, #1d1d22);
-  padding: 0px;
-  margin: 0px;
-  height: 100vh;
+  font-family:'Arial';
+  background-color: var(--oxfordblue);
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.top{
+  display:flex;
+  align-items: center;
+  flex-direction:row;
+  justify-content: space-around;
+  height: 10%;
+  width: 100%;
+  background-color: var(--charcoal);
+  padding: 0;  
+}
+
+
+.container{
+  background: yellow;
+}
+
+.logo{
+  font-size: 42px;
+  color: var(--honeyellow);
+  font-style: 'TIMES';
+}
+
+
+.reg{
+  color: var(--bluemunsell);
+  font-family: 'Helvetica';
+  font-size: 20px;
+}
+
+.reg:hover{
+  color:white;
+}
+
+.user{
+  color: var(--bluemunsell);
+  font-family: 'Helvetica';
+  font-size: 20px; 
 }
