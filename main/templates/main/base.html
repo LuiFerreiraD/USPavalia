@@ -1,5 +1,27 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
+=======
+<html lang="en">
+  <header>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </header>
+
+  <body>
+    <div class="top">
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+      <div class="logo">opiniusp</div>
+      {% if user.is_authenticated %}
+      <div class="user">{{user.username}}</div>
+      <a href="{% url 'accounts:logout' %}">Sair</a>
+      {% else %}
+      <a class="reg" href="{% url 'accounts:login' %}">login</a>
+      <a class="reg" href="{% url 'accounts:register' %}">register</a>
+      {% endif %}
+    </div>
+>>>>>>> 9f5c7389fdef3acd0c368e081838a973f91814f6
 
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -35,5 +57,9 @@
     TESTE
   </div>
 </body>
+<<<<<<< HEAD
 
 </html>
+=======
+</html>
+>>>>>>> 9f5c7389fdef3acd0c368e081838a973f91814f6

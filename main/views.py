@@ -30,8 +30,6 @@ def pagina_disciplina(request, id):
     mediaCrit3 = int(round(avaliacoes.aggregate(Avg("notaCrit3"))["notaCrit3__avg"]))
     mediaCrit4 = int(round(avaliacoes.aggregate(Avg("notaCrit4"))["notaCrit4__avg"]))
 
-    print(mediaGeral, mediaCrit1, mediaCrit2, mediaCrit3, mediaCrit4)
-
     ranges = [
         range(mediaGeral), range(mediaCrit1), range(mediaCrit2), range(mediaCrit3), range(mediaCrit4)
     ]
@@ -99,7 +97,6 @@ def add_review(request, disciplina_id):
         disciplina = Disciplina.objects.get(id=disciplina_id)
         if request.method == "POST":
             form = AvaliacaoForm(request.POST or None)
-            print(form)
             if form.is_valid():
                 data = form.save(commit=False)
                 data.user = request.user
