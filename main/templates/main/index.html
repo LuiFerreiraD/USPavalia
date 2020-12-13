@@ -1,11 +1,16 @@
 {% extends 'main/base.html'%}
+{% load static %}
 {% block content %}
 
 
-
-<div class=busca>
-    Busque uma disciplina!
-</div>
+<form class=busca>
+    <input type="search" id="busca-disc" list="sugestoes-pesquisa"
+    placeholder="Pesquisar disciplina...">
+    <img src="{% static 'main/images/lupa.png' %}" class="btn">
+    <datalist id="sugestoes-pesquisa">
+        <option value="Sistemas a eventos discretos"></option>
+    </datalist>
+</form>
 
 {%for disci in disciplinas%}
 <a class=disc href="{%url 'main:disciplina' disci.id %}">{{disci.nome}}</a>
