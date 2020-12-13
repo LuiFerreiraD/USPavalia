@@ -1,10 +1,12 @@
-{% extends 'main/base.html'%} {% block content %}
+{% extends 'main/base.html'%}
+{% block content %}
 
 
 
 <div class=busca>
     TESTE
 </div>
+
 {%for disci in disciplinas%}
 <a class=disc href="{%url 'main:disciplina' disci.id %}">{{disci.nome}}</a>
 {% endfor %} {% endblock %}
