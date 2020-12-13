@@ -132,16 +132,19 @@
 </div>
 
 <div class=comments>
-  <h3>Comentários</h3>
+  <h2>Comentários</h2>
   {% for comentario in comentarios %}
   <div class=comment>
-    <div> {{comentario.user.username}} {{ comentario.texto }} </div>
+    <div class=comentarista> {{comentario.user.username}} - </div>
+    <div class=comentario>{{ comentario.texto }}</div>
+
     {% if request.user == comentario.user %}
-    <a href="{% url 'main:edit_comment' disciplina.id comentario.id %}">Editar</a>
+    <a href="{% url 'main:edit_comment' disciplina.id comentario.id %}" class='edit'>editar</a>
     <a href="{% url 'main:delete_comment' disciplina.id comentario.id %}"
-      onclick="return confirm('Deletar comentário?')">Deletar</a>
+      onclick="return confirm('Deletar comentário?')" class='edit'>excluir</a>
     {% else %}
     {% endif%}
+
   </div>
   {% endfor %}
 </div>
