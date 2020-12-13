@@ -80,15 +80,45 @@ body {
 
 
 /*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
-.aval {
+.bloco-avaliacao {
   height: 30%;
   width: 100%;
   background-color: var(--bluemunsell);
-  padding: 5% 0px 0px 0px;
+  display: flex;
+  align-content: flex-start;
+}
+
+.bloco-infos1{
+  height: 100%;
+  width: 50%;
+  background-color: yellow;
+}
+
+.bloco-infos2{
+  height: 100%;
+  width: 50%;
+  background-color: red;
+}
+
+.displace{
+  display: flex;
+  background-color: pink;
+  align-content: flex-start;
+}
+
+.base{
+  background-color:purple;
+  width: 50%;
+  display: flex;
+  align-content: flex-start;
+  padding: 5px 0px 0px 10px;
 }
 
 .rating {
-  float: left;
+  background-color: green;
+  border: none;
+  width: 50%;
+  float: right;
 }
 .rating:not(:checked) > input {
   position: absolute;
@@ -97,13 +127,13 @@ body {
 }
 .rating:not(:checked) > label {
   float: right;
-  width: 1em;
+  /*width: 1em;*/
   padding: 0 0.1em;
   overflow: hidden;
   white-space: nowrap;
   cursor: pointer;
-  font-size: 200%;
-  line-height: 1.2;
+  /*font-size: 200%;
+  line-height: 1.2;*/
   color: #ddd;
   text-shadow: 1px 1px #bbb, 2px 2px #666, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
 }
