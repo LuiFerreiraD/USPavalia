@@ -77,6 +77,16 @@ body {
   color: white;
 }
 
+
+
+/*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
+.aval {
+  height: 30%;
+  width: 100%;
+  background-color: var(--bluemunsell);
+  padding: 5% 0px 0px 0px;
+}
+
 .rating {
   float: left;
 }
@@ -125,6 +135,7 @@ body {
   left: 2px;
 }
 
+/*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
 .user {
   color: var(--honeyellow);
   font-family: "Helvetica";
@@ -146,13 +157,6 @@ body {
 
 h1 {
   color: white;
-}
-
-.aval {
-  height: 30%;
-  width: 100%;
-  background-color: var(--bluemunsell);
-  padding: 5% 0px 0px 0px;
 }
 
 .comments {

@@ -1,7 +1,11 @@
-{% extends 'main/base.html'%} {% block content %}
+{% extends 'main/base.html'%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/disciplina.css' %}" />
+{% block content %}
+
 
 <h1>{{disciplina.nome}}</h1>
-<div class=aval>
+<div class=bloco-avaliacao>
   <h3 class="avalicao_estrelas"> Avaliação Geral da Disciplina</h3>
   <ul>
     <li> {%for i in ranges.0%} <span class="preenchida">&#9733</span> {% endfor %}
