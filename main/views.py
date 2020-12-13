@@ -112,6 +112,7 @@ def delete_comment(request, disciplina_id, comentario_id):
         return redirect("accounts:login")
 
 def add_review(request, disciplina_id):
+    print('entrou')
     if request.user.is_authenticated:
         disciplina = Disciplina.objects.get(id=disciplina_id)
         if request.method == "POST":
@@ -119,7 +120,6 @@ def add_review(request, disciplina_id):
             form = AvaliacaoForm(request.POST or None)
             print(form)
             if form.is_valid():
-                print("also valid")
                 data = form.save(commit=False)
                 data.user = request.user
                 data.notageral = request.POST["notageral"]
