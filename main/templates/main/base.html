@@ -25,15 +25,15 @@
 
     {% if user.is_authenticated %}
     <div class=padding></div>
-    <div class="user">Bem Vindo, {{user.username}}</div>
+    <div class="user">Bem Vindo,  {{user.username}}</div>
     <div class="regbox"><a class="reg" href="{% url 'accounts:logout' %}">sair</a></div>
     {% else %}
 
     <div class=padding></div>
 
     <div class="regbox">
-      <a class="reg" href="{% url 'accounts:login' %}">login</a>
-      <a class="reg" href="{% url 'accounts:register' %}">register</a>
+      <a class="reg" href="{% url 'accounts:login' %}">Entre</a>
+      <a class="reg" href="{% url 'accounts:register' %}">Registre-se</a>
     </div>
     {% endif %}
   </div>
