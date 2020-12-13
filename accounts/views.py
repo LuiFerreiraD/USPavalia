@@ -58,3 +58,4 @@ def logout_user(request):
         return redirect("main:home")
     else:
         return redirect("main:home")
+
