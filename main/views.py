@@ -47,7 +47,6 @@ def pagina_disciplina(request, id):
         range(averages[0]), range(averages[1]), range(averages[2]), range(averages[3]), range(averages[4])
     ]
     
-    print(5-averages[0])
     complementos = [
         range(5-averages[0]), range(5- averages[1]), range(5 - averages[2]), range(5 - averages[3]), range(5 - averages[4])
     ]
@@ -116,8 +115,11 @@ def add_review(request, disciplina_id):
     if request.user.is_authenticated:
         disciplina = Disciplina.objects.get(id=disciplina_id)
         if request.method == "POST":
+            print("é psot")
             form = AvaliacaoForm(request.POST or None)
+            print(form)
             if form.is_valid():
+                print("also valid")
                 data = form.save(commit=False)
                 data.user = request.user
                 data.notageral = request.POST["notageral"]

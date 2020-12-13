@@ -3,50 +3,42 @@
 <h1>{{disciplina.nome}}</h1>
 <div class=aval>
   <h3 class="avalicao_estrelas"> Avaliação Geral da Disciplina</h3>
-  <ul>
-    <li> {%for i in ranges.0%} <span class="preenchida">&#9733</span> {% endfor %}
-      {%for i in complementos.0%} <span class="vazia">&#9733</span> {% endfor %} </li>
-  </ul>
-  <h3 class="avalicao_estrelas">Nível de Dedicação Requerido</h3>
-  <ul>
-    <li> {%for i in ranges.1%} <span class="preenchida">&#9733</span> {% endfor %}
-      {%for i in complementos.1%} <span class="vazia">&#9733</span> {% endfor %} </li>
-  </ul>
-  <h3 class="avalicao_estrelas">Nível de Dificuldade das Avaliações</h3>
-  <ul>
-    <li> {%for i in ranges.2%} <span class="preenchida">&#9733</span> {% endfor %}
-      {%for i in complementos.2%} <span class="vazia">&#9733</span> {% endfor %} </li>
-  </ul>
-  <h3 class="avalicao_estrelas">Nível de Conhecimento Prévio Requerido</h3>
-  <ul>
-    <li> {%for i in ranges.3%} <span class="preenchida">&#9733</span> {% endfor %}
-      {%for i in complementos.3%} <span class="vazia">&#9733</span> {% endfor %} </li>
-  </ul>
-  <h3 class="avalicao_estrelas">Qualidade do material disponibilizado</h3>
-  <ul>
-    <li> {%for i in ranges.4%} <span class="preenchida">&#9733</span> {% endfor %}
-      {%for i in complementos.4%} <span class="vazia">&#9733</span> {% endfor %} </li>
-  </ul>
+<ul>
+<li > {%for i in ranges.0%} <span class="preenchida">&#9733</span> {% endfor %}
+  {%for i in complementos.0%} <span class="vazia">&#9733</span> {% endfor %} </li>
+</ul>
+<h3 class="avalicao_estrelas">Nível de Dedicação Requerido</h3>
+<ul>
+<li > {%for i in ranges.1%} <span class="preenchida">&#9733</span> {% endfor %}
+  {%for i in complementos.1%} <span class="vazia">&#9733</span> {% endfor %} </li>
+</ul>
+<h3 class="avalicao_estrelas">Nível de Dificuldade das Avaliações</h3>
+<ul>
+<li > {%for i in ranges.2%} <span class="preenchida">&#9733</span> {% endfor %}
+  {%for i in complementos.2%} <span class="vazia">&#9733</span> {% endfor %} </li>
+</ul>
+<h3 class="avalicao_estrelas">Nível de Conhecimento Prévio Requerido</h3>
+<ul>
+<li > {%for i in ranges.3%} <span class="preenchida">&#9733</span> {% endfor %}
+  {%for i in complementos.3%} <span class="vazia">&#9733</span> {% endfor %} </li>
+</ul>
+<h3 class="avalicao_estrelas">Qualidade do material disponibilizado</h3>
+<ul>
+<li > {%for i in ranges.4%} <span class="preenchida">&#9733</span> {% endfor %}
+  {%for i in complementos.4%} <span class="vazia">&#9733</span> {% endfor %} </li>
+</ul>
 </div>
 
 <div class=comments>
   {% for comentario in comentarios %}
-  <div class=comment>{{ comentario.texto }} {{comentario.user.username}}</div>
+  <li>{{ comentario.texto }} <i> {{comentario.user.username}}</i></li>
   {% if request.user == comentario.user %}
   <a href="{% url 'main:edit_comment' disciplina.id comentario.id %}">Editar</a>
   <a href="{% url 'main:delete_comment' disciplina.id comentario.id %}"
     onclick="return confirm('Deletar comentário?')">Deletar</a>
+  {% else %}
   {% endif%} {% endfor %}
 </div>
-
-
-
-<div> Notas: </div>
-<ul>
-  {% for iterador in ranges %}
-  <li> {%for i in iterador%} <span>&#9733</span> {% endfor %} </li>
-  {% endfor %}
-</ul>
 
 <div>
   <form action="{% url 'main:add_comentario' disciplina.id%}" method="POST">
@@ -62,7 +54,13 @@
   {% csrf_token %}
 
 
-
+  <fieldset class="rating geral">
+    <input type="radio" id="star5" name="notageral" value="5" /><label for="star5"><span>&#9733</span></label>
+    <input type="radio" id="star4" name="notageral" value="4" /><label for="star4"><span>&#9733</span></label>
+    <input type="radio" id="star3" name="notageral" value="3" /><label for="star3"><span>&#9733</span></label>
+    <input type="radio" id="star2" name="notageral" value="2" /><label for="star2"><span>&#9733</span></label>
+    <input type="radio" id="star1" name="notageral" value="1" /><label for="star1"><span>&#9733</span></label>
+  </fieldset>
 
   <fieldset class="rating crit1">
     <input type="radio" id="star5-crit1" name="notaCrit1" value="5" /><label
@@ -117,10 +115,18 @@
   </fieldset>
 
 
-  <br />
+  <br/>
   <input type="submit" value="Avaliar" />
 </form>
 </div>
 
-
+<div>
+  {% for comentario in comentarios %}
+  <li>{{ comentario.texto }} <i> {{comentario.user.username}}</i></li>
+  {% if request.user == comentario.user %}
+  <a href="{% url 'main:edit_comment' disciplina.id comentario.id %}">Editar</a>
+  <a href="{% url 'main:delete_comment' disciplina.id comentario.id %}"
+    onclick="return confirm('Deletar comentário?')">Deletar</a>
+  {% endif%} {% endfor %}
+</div>
 {% endblock %}
