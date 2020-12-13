@@ -6,7 +6,68 @@
   --honeyellow: #feb320;
 }
 
-/*---------------------------------------------------PARTE DE CIMA DA PAGINA--------------------------------------------*/
+/*LOGIN*/
+
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Arvo','sans-serif';
+}
+
+.box{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #0E121A;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.box input[type ='text'], .box input[type=password]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  font-family: 'Arvo','sans-serif';
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box input[type ='text']:focus, .box input[type=password]:focus{
+width: 280px;
+border: 2px solid var(--honeyellow);
+}
+
+.box input[type=submit]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid var(--honeyellow);
+  padding: 14px 40px;
+  outline: none;
+  font-family: 'Arvo','sans-serif';
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type=submit]:hover{
+  background: var(--honeyellow);
+}
+
+/*PARTE DE CIMA DA PAGINA*/
 .top {
   height: 10%;
   width: 100%;
@@ -72,7 +133,7 @@ a {
 
 body {
   display: flex;
-  background: linear-gradient(#000e29, #363738);
+  background: #002855;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -138,7 +199,7 @@ body {
   width: 30%;
   text-align: center;
   margin: 1% 5% 1% 5%;
-  background: linear-gradient(45deg,#000e29, #363738);
+  background: #000E29/*linear-gradient(45deg,#000E29, #0353A4)*/;
   border: 5px solid #363738;
   border-radius: 5%;
 }
@@ -226,23 +287,7 @@ body {
   font-family: "Arvo",sans-serif;
 }
 
-.comments {
-  height: 30%;
-  width: 100%;
-  background-color: var(--middleblue);
-  padding: 0px 0px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  text-align: start;
-}
-.comment {
-  padding: 2px;
-  display: flex;
-  color: white;
-  flex-direction: row;
-  align-content: space-between;
-}
+
 
 hr{
   width: 100%;
@@ -252,15 +297,12 @@ hr{
 /*-------------------------------------------------------COMENTÁRIOS----------------------------------------------------*/
 
 .container{
-  background: linear-gradient(#363738, #000e29);
   color: snow;
   width: 100%;
   height: 10%;
   padding: 2px 2px 2px 2px;
-  text-align: center;
-  margin: 2%;
-  border-top: #363738;
-  border-bottom: #000e29;
+  text-align: center; 
+  border-top: 4px solid white;
 }
 
 textarea{
@@ -301,6 +343,49 @@ input[type=submit]:hover{
 button{
   color: #333;
   background-color: transparent;
+}
+
+.comments {
+  height: 30%;
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  align-content: space-around;
+}
+.comment {
+  margin: 1% 1% 1% 1%;
+  border: 2px solid white;  
+  padding: 2px;
+  display: flex;
+  background-color: #0E121A;
+  flex-direction: row;
+  align-content: space-around;
+  text-align: center;
+}
+
+.edit{
+  text-decoration: none;
+  font-family: 'Arvo','sans serif';
+  font-size: small
+}
+
+.comentarista{
+  width:15%;
+  font-family: 'Arvo, sans-serif';
+  font-size: medium;
+  font-weight: bold;
+}
+
+.comentario{
+  width:95%;
+  font-family: 'Arvo, sans-serif';
+  font-size: medium;
+  font-weight: normal;
+  text-align: start;
+  margin-left: auto;
 }
 
 /*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/

@@ -1,23 +1,31 @@
 {% extends 'main/base.html' %} {% block content %}
 
+
 <div class="login">
   {% if error %}
   <h5 style="color: red">{{error}}</h5>
   {% endif %}
-  <form action="" method="POST">
+  <form action="" method="POST" class='box'>
     {% csrf_token %}
-
+    <h1>Login</h1>
     <div>
-      <label for="username">usuário</label>
-      <input type="text" placeholder="Usuário" class="form-control" name="username" />
+      <input type="text" placeholder="Usuário" name="username" />
     </div>
-
     <div>
-      <label for="password">senha</label>
-      <input type="text" placeholder="Senha" class="form-control" name="password" />
+      <input type="password" placeholder="Senha" name="password" />
       <input type="submit" value="Entrar" />
     </div>
+
   </form>
 </div>
 
+<!--
+<form class="box" action="login.html" method="POST">
+  {% csrf_token %}
+  <h1>Login</h1>
+  <input type="text" name="" placeholder="usuario">
+  <input type="password" name="" placeholder="senha">
+  <input type="submit" name="" value="Login">
+</form>
 {% endblock %}
+-->
