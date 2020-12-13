@@ -1,5 +1,27 @@
 {% extends 'main/base.html' %} {% block content %}
 
+<div class="wrapper">
+  <div class="form">
+    <div class="input_field">
+      <input type="text" placeholder="Name" class="input">
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="input_field">
+      <input type="text" placeholder="Email" class="input">
+      <i class="far fa-envelope"></i>
+    </div>
+    <div class="input_field">
+      <input type="password" placeholder="Password" class="input">
+      <i class="fas fa-lock"></i>
+    </div>
+    <div class="btn">
+      <a href="#">Register</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<!--
 <div class="login">
   <h3>Crie sua conta</h3>
   <form action="" method="POST">
@@ -7,5 +29,6 @@
     <input type="submit" value="Registrar" />
   </form>
 </div>
+-->
 
 {% endblock %}

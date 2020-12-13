@@ -401,3 +401,57 @@ h1 {
   color: white;
 }
 
+.wrapper{
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  background: #0E121A;;
+  padding: 60px 45px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 20px;
+}
+
+.wrapper .title{
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #3aaf9f;
+}
+
+.wrapper .form .input_field{
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.wrapper .form .input_field .input{
+  width: 100%;
+  padding: 12px;
+  padding-left: 30px;
+  border: none;
+  background: #eeeeee;
+}
+
+.wrapper .form .btn{
+  width: 70%;
+  margin: 20px auto 0;
+  background: #3aaf9f;
+  text-align: center;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.wrapper .form .btn a{
+  color: #fff;
+}
+
+.wrapper .form .input_field i{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #1d2120;
+}
