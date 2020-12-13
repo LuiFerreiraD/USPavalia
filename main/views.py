@@ -13,7 +13,10 @@ def home(request):
     }
     return render(request, 'main/index.html', contexto)
 
-    
+
+def roundTraditional(val,digits=0):
+    return round(val+10**(-len(str(val))-1), digits)
+
 #pagina da disciplina
 def pagina_disciplina(request, id):
     disciplina = Disciplina.objects.get(id=id)
@@ -38,18 +41,23 @@ def pagina_disciplina(request, id):
         if media == None:
             averages.append(0)
         else:
-            averages.append(int(round(media)))
+            averages.append(int(roundTraditional(media)))
     
-    print(averages[0], averages[1])
-
     ranges = [
         range(averages[0]), range(averages[1]), range(averages[2]), range(averages[3]), range(averages[4])
     ]
+    
+    print(5-averages[0])
+    complementos = [
+        range(5-averages[0]), range(5- averages[1]), range(5 - averages[2]), range(5 - averages[3]), range(5 - averages[4])
+    ]
+    #numero de estrelas preenchidas e não preenchdidas, em cada tupla
 
     contexto = {
         "disciplina": disciplina,
         "comentarios": comentarios,
-        "ranges": ranges
+        "ranges": ranges,
+        "complementos": complementos
     }
 
     return render(request, 'main/disciplina.html', contexto)

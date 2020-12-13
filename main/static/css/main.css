@@ -162,3 +162,18 @@ h1 {
   background-color: var(--middleblue);
   padding: 5% 0px 0px 0px;
 }
+
+.preenchida {
+  color: gold;
+  text-shadow: 1px 1px goldenrod, 2px 2px #b57340,
+    0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+}
+
+.vazia {
+  color: #ddd;
+  text-shadow: 1px 1px #bbb, 2px 2px #666, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+}
+
+.avalicao_estrelas {
+  color: var(--honeyellow);
+}
