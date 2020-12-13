@@ -88,13 +88,13 @@ body {
 
 .bloco-infos1{
   height: 100%;
-  width: 50%;
+  width: 70%;
   background-color: yellow;
 }
 
 .bloco-infos2{
   height: 100%;
-  width: 50%;
+  width: 30%;
   background-color: red;
 }
 
@@ -109,7 +109,7 @@ body {
   width: 50%;
   display: flex;
   align-content: flex-start;
-  padding: 5px 0px 0px 10px;
+  padding: 6px 0px 0px 10px;
 }
 
 .rating {
@@ -163,6 +163,20 @@ body {
   left: 2px;
 }
 
+.preenchida {
+  color: gold;
+  text-shadow: 1px 1px goldenrod, 2px 2px #b57340,
+    0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+}
+
+.vazia {
+  color: #ddd;
+  text-shadow: 1px 1px #bbb, 2px 2px #666, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+}
+
+.avalicao_estrelas {
+  color: var(--honeyellow);
+}
 /*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
 .user {
   color: var(--honeyellow);
@@ -197,19 +211,4 @@ h1 {
 }
 .comment {
   color: white;
-}
-
-.preenchida {
-  color: gold;
-  text-shadow: 1px 1px goldenrod, 2px 2px #b57340,
-    0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
-}
-
-.vazia {
-  color: #ddd;
-  text-shadow: 1px 1px #bbb, 2px 2px #666, 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
-}
-
-.avalicao_estrelas {
-  color: var(--honeyellow);
 }
