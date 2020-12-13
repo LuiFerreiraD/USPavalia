@@ -2,28 +2,31 @@
 
 <h1>{{disciplina.nome}}</h1>
 <div class=aval>
-
-  <fieldset class="rating geral">
-    <input type="radio" id="star5" name="notageral" value="5" /><label for="star5"><span>&#9733</span></label>
-    <input type="radio" id="star4" name="notageral" value="4" /><label for="star4"><span>&#9733</span></label>
-    <input type="radio" id="star3" name="notageral" value="3" /><label for="star3"><span>&#9733</span></label>
-    <input type="radio" id="star2" name="notageral" value="2" /><label for="star2"><span>&#9733</span></label>
-    <input type="radio" id="star1" name="notageral" value="1" /><label for="star1"><span>&#9733</span></label>
-  </fieldset>
-
-  <fieldset class="rating crit1">
-    <input type="radio" id="star5-crit1" name="notaCrit1" value="5" /><label
-      for="star5-crit1"><span>&#9733</span></label>
-    <input type="radio" id="star4-crit1" name="notaCrit1" value="4" /><label
-      for="star4-crit1"><span>&#9733</span></label>
-    <input type="radio" id="star3-crit1" name="notaCrit1" value="3" /><label
-      for="star3-crit1"><span>&#9733</span></label>
-    <input type="radio" id="star2-crit1" name="notaCrit1" value="2" /><label
-      for="star2-crit1"><span>&#9733</span></label>
-    <input type="radio" id="star1-crit1" name="notaCrit1" value="1" /><label
-      for="star1-crit1"><span>&#9733</span></label>
-  </fieldset>
-
+  <h3 class="avalicao_estrelas"> Avaliação Geral da Disciplina</h3>
+  <ul>
+    <li> {%for i in ranges.0%} <span class="preenchida">&#9733</span> {% endfor %}
+      {%for i in complementos.0%} <span class="vazia">&#9733</span> {% endfor %} </li>
+  </ul>
+  <h3 class="avalicao_estrelas">Nível de Dedicação Requerido</h3>
+  <ul>
+    <li> {%for i in ranges.1%} <span class="preenchida">&#9733</span> {% endfor %}
+      {%for i in complementos.1%} <span class="vazia">&#9733</span> {% endfor %} </li>
+  </ul>
+  <h3 class="avalicao_estrelas">Nível de Dificuldade das Avaliações</h3>
+  <ul>
+    <li> {%for i in ranges.2%} <span class="preenchida">&#9733</span> {% endfor %}
+      {%for i in complementos.2%} <span class="vazia">&#9733</span> {% endfor %} </li>
+  </ul>
+  <h3 class="avalicao_estrelas">Nível de Conhecimento Prévio Requerido</h3>
+  <ul>
+    <li> {%for i in ranges.3%} <span class="preenchida">&#9733</span> {% endfor %}
+      {%for i in complementos.3%} <span class="vazia">&#9733</span> {% endfor %} </li>
+  </ul>
+  <h3 class="avalicao_estrelas">Qualidade do material disponibilizado</h3>
+  <ul>
+    <li> {%for i in ranges.4%} <span class="preenchida">&#9733</span> {% endfor %}
+      {%for i in complementos.4%} <span class="vazia">&#9733</span> {% endfor %} </li>
+  </ul>
 </div>
 
 <div class=comments>
