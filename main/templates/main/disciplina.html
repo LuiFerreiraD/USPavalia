@@ -2,12 +2,33 @@
 
 <h1>{{disciplina.nome}}</h1>
 <div class=aval>
-  AVALIAÇÕES AQUI
+
+  <fieldset class="rating geral">
+    <input type="radio" id="star5" name="notageral" value="5" /><label for="star5"><span>&#9733</span></label>
+    <input type="radio" id="star4" name="notageral" value="4" /><label for="star4"><span>&#9733</span></label>
+    <input type="radio" id="star3" name="notageral" value="3" /><label for="star3"><span>&#9733</span></label>
+    <input type="radio" id="star2" name="notageral" value="2" /><label for="star2"><span>&#9733</span></label>
+    <input type="radio" id="star1" name="notageral" value="1" /><label for="star1"><span>&#9733</span></label>
+  </fieldset>
+
+  <fieldset class="rating crit1">
+    <input type="radio" id="star5-crit1" name="notaCrit1" value="5" /><label
+      for="star5-crit1"><span>&#9733</span></label>
+    <input type="radio" id="star4-crit1" name="notaCrit1" value="4" /><label
+      for="star4-crit1"><span>&#9733</span></label>
+    <input type="radio" id="star3-crit1" name="notaCrit1" value="3" /><label
+      for="star3-crit1"><span>&#9733</span></label>
+    <input type="radio" id="star2-crit1" name="notaCrit1" value="2" /><label
+      for="star2-crit1"><span>&#9733</span></label>
+    <input type="radio" id="star1-crit1" name="notaCrit1" value="1" /><label
+      for="star1-crit1"><span>&#9733</span></label>
+  </fieldset>
+
 </div>
 
 <div class=comments>
   {% for comentario in comentarios %}
-  <li>{{ comentario.texto }} <i> {{comentario.user.username}}</i></li>
+  <div class=comment>{{ comentario.texto }} {{comentario.user.username}}</div>
   {% if request.user == comentario.user %}
   <a href="{% url 'main:edit_comment' disciplina.id comentario.id %}">Editar</a>
   <a href="{% url 'main:delete_comment' disciplina.id comentario.id %}"
@@ -19,9 +40,9 @@
 
 <div> Notas: </div>
 <ul>
-{% for iterador in ranges %}
-<li > {%for i in iterador%} <span>&#9733</span> {% endfor %} </li>
-{% endfor %}
+  {% for iterador in ranges %}
+  <li> {%for i in iterador%} <span>&#9733</span> {% endfor %} </li>
+  {% endfor %}
 </ul>
 
 <div>
@@ -38,13 +59,7 @@
   {% csrf_token %}
 
 
-  <fieldset class="rating geral">
-    <input type="radio" id="star5" name="notageral" value="5" /><label for="star5"><span>&#9733</span></label>
-    <input type="radio" id="star4" name="notageral" value="4" /><label for="star4"><span>&#9733</span></label>
-    <input type="radio" id="star3" name="notageral" value="3" /><label for="star3"><span>&#9733</span></label>
-    <input type="radio" id="star2" name="notageral" value="2" /><label for="star2"><span>&#9733</span></label>
-    <input type="radio" id="star1" name="notageral" value="1" /><label for="star1"><span>&#9733</span></label>
-  </fieldset>
+
 
   <fieldset class="rating crit1">
     <input type="radio" id="star5-crit1" name="notaCrit1" value="5" /><label
@@ -104,13 +119,5 @@
 </form>
 </div>
 
-<div>
-  {% for comentario in comentarios %}
-  <li>{{ comentario.texto }} <i> {{comentario.user.username}}</i></li>
-  {% if request.user == comentario.user %}
-  <a href="{% url 'main:edit_comment' disciplina.id comentario.id %}">Editar</a>
-  <a href="{% url 'main:delete_comment' disciplina.id comentario.id %}"
-    onclick="return confirm('Deletar comentário?')">Deletar</a>
-  {% endif%} {% endfor %}
-</div>
+
 {% endblock %}
