@@ -5,32 +5,116 @@
 
 
 <h1>{{disciplina.nome}}</h1>
+
 <div class=bloco-avaliacao>
-  <h3 class="avalicao_estrelas"> Avaliação Geral da Disciplina</h3>
-<ul>
-<li > {%for i in ranges.0%} <span class="preenchida">&#9733</span> {% endfor %}
-  {%for i in complementos.0%} <span class="vazia">&#9733</span> {% endfor %} </li>
-</ul>
-<h3 class="avalicao_estrelas">Nível de Dedicação Requerido</h3>
-<ul>
-<li > {%for i in ranges.1%} <span class="preenchida">&#9733</span> {% endfor %}
-  {%for i in complementos.1%} <span class="vazia">&#9733</span> {% endfor %} </li>
-</ul>
-<h3 class="avalicao_estrelas">Nível de Dificuldade das Avaliações</h3>
-<ul>
-<li > {%for i in ranges.2%} <span class="preenchida">&#9733</span> {% endfor %}
-  {%for i in complementos.2%} <span class="vazia">&#9733</span> {% endfor %} </li>
-</ul>
-<h3 class="avalicao_estrelas">Nível de Conhecimento Prévio Requerido</h3>
-<ul>
-<li > {%for i in ranges.3%} <span class="preenchida">&#9733</span> {% endfor %}
-  {%for i in complementos.3%} <span class="vazia">&#9733</span> {% endfor %} </li>
-</ul>
-<h3 class="avalicao_estrelas">Qualidade do material disponibilizado</h3>
-<ul>
-<li > {%for i in ranges.4%} <span class="preenchida">&#9733</span> {% endfor %}
-  {%for i in complementos.4%} <span class="vazia">&#9733</span> {% endfor %} </li>
-</ul>
+  <div class=bloco-infos1>DDDD</div>
+
+  <div class=bloco-infos2>
+    <form action="{% url 'main:add_review' disciplina.id%}" method="POST"></form>
+    {% csrf_token %}
+
+    <h3 class="avalicao_estrelas"> Avaliação Geral da Disciplina</h3>
+    <div class="displace">
+      <fieldset class="rating">
+        <input type="radio" id="star5" name="notageral" value="5" /><label for="star5"><span>&#9733</span></label>
+        <input type="radio" id="star4" name="notageral" value="4" /><label for="star4"><span>&#9733</span></label>
+        <input type="radio" id="star3" name="notageral" value="3" /><label for="star3"><span>&#9733</span></label>
+        <input type="radio" id="star2" name="notageral" value="2" /><label for="star2"><span>&#9733</span></label>
+        <input type="radio" id="star1" name="notageral" value="1" /><label for="star1"><span>&#9733</span></label>
+      </fieldset>
+      <div class="base">
+        {%for i in ranges.0%} <span class="preenchida">&#9733</span> {% endfor %}
+        {%for i in complementos.0%} <span class="vazia">&#9733</span> {% endfor %}
+      </div>
+    </div>
+
+    <h3 class="avalicao_estrelas">Nível de Dedicação Requerido</h3>
+    <div class=displace>
+      <fieldset class="rating crit1">
+        <input type="radio" id="star5-crit1" name="notaCrit1" value="5" /><label
+          for="star5-crit1"><span>&#9733</span></label>
+        <input type="radio" id="star4-crit1" name="notaCrit1" value="4" /><label
+          for="star4-crit1"><span>&#9733</span></label>
+        <input type="radio" id="star3-crit1" name="notaCrit1" value="3" /><label
+          for="star3-crit1"><span>&#9733</span></label>
+        <input type="radio" id="star2-crit1" name="notaCrit1" value="2" /><label
+          for="star2-crit1"><span>&#9733</span></label>
+        <input type="radio" id="star1-crit1" name="notaCrit1" value="1" /><label
+          for="star1-crit1"><span>&#9733</span></label>
+      </fieldset>
+      <div class="base">
+        {%for i in ranges.1%} <span class="preenchida">&#9733</span> {% endfor %}
+        {%for i in complementos.1%} <span class="vazia">&#9733</span> {% endfor %}
+      </div>
+    </div>
+
+    <h3 class="avalicao_estrelas">Nível de Dificuldade das Avaliações</h3>
+    <div class=displace>
+      <fieldset class="rating crit2">
+        <input type="radio" id="star5-crit2" name="notaCrit2" value="5" /><label
+          for="star5-crit2"><span>&#9733</span></label>
+        <input type="radio" id="star4-crit2" name="notaCrit2" value="4" /><label
+          for="star4-crit2"><span>&#9733</span></label>
+        <input type="radio" id="star3-crit2" name="notaCrit2" value="3" /><label
+          for="star3-crit2"><span>&#9733</span></label>
+        <input type="radio" id="star2-crit2" name="notaCrit2" value="2" /><label
+          for="star2-crit2"><span>&#9733</span></label>
+        <input type="radio" id="star1-crit2" name="notaCrit2" value="1" /><label
+          for="star1-crit2"><span>&#9733</span></label>
+      </fieldset>
+      <div class="base">
+        {%for i in ranges.2%} <span class="preenchida">&#9733</span> {% endfor %}
+        {%for i in complementos.2%} <span class="vazia">&#9733</span> {% endfor %}
+      </div>
+    </div>
+
+
+    <h3 class="avalicao_estrelas">Nível de Conhecimento Prévio Requerido</h3>
+    <div class=displace>
+      <fieldset class="rating crit3">
+        <input type="radio" id="star5-crit3" name="notaCrit3" value="5" /><label
+          for="star5-crit3"><span>&#9733</span></label>
+        <input type="radio" id="star4-crit3" name="notaCrit3" value="4" /><label
+          for="star4-crit3"><span>&#9733</span></label>
+        <input type="radio" id="star3-crit3" name="notaCrit3" value="3" /><label
+          for="star3-crit3"><span>&#9733</span></label>
+        <input type="radio" id="star2-crit3" name="notaCrit3" value="2" /><label
+          for="star2-crit3"><span>&#9733</span></label>
+        <input type="radio" id="star1-crit3" name="notaCrit3" value="1" /><label
+          for="star1-crit3"><span>&#9733</span></label>
+      </fieldset>
+      <div class="base">
+        {%for i in ranges.3%} <span class="preenchida">&#9733</span> {% endfor %}
+        {%for i in complementos.3%} <span class="vazia">&#9733</span> {% endfor %}
+      </div>
+    </div>
+
+    <h3 class="avalicao_estrelas">Qualidade do material disponibilizado</h3>
+
+    <div class=displace>
+      <fieldset class="rating crit4">
+        <input type="radio" id="star5-crit4" name="notaCrit4" value="5" /><label
+          for="star5-crit4"><span>&#9733</span></label>
+        <input type="radio" id="star4-crit4" name="notaCrit4" value="4" /><label
+          for="star4-crit4"><span>&#9733</span></label>
+        <input type="radio" id="star3-crit4" name="notaCrit4" value="3" /><label
+          for="star3-crit4"><span>&#9733</span></label>
+        <input type="radio" id="star2-crit4" name="notaCrit4" value="2" /><label
+          for="star2-crit4"><span>&#9733</span></label>
+        <input type="radio" id="star1-crit4" name="notaCrit4" value="1" /><label
+          for="star1-crit4"><span>&#9733</span></label>
+      </fieldset>
+
+      <div class="base">
+        {%for i in ranges.4%} <span class="preenchida">&#9733</span> {% endfor %}
+        {%for i in complementos.4%} <span class="vazia">&#9733</span> {% endfor %}
+      </div>
+    </div>
+    <input type="submit" value="Avaliar" />
+    </form>
+  </div>
+</div>
+</div>
 </div>
 
 <div class=comments>
@@ -52,85 +136,5 @@
     <br />
     <input type="submit" value="Adicionar comentário" />
   </form>
-</div>
 
-<form action="{% url 'main:add_review' disciplina.id%}" method="POST">
-  {% csrf_token %}
-
-
-  <fieldset class="rating geral">
-    <input type="radio" id="star5" name="notageral" value="5" /><label for="star5"><span>&#9733</span></label>
-    <input type="radio" id="star4" name="notageral" value="4" /><label for="star4"><span>&#9733</span></label>
-    <input type="radio" id="star3" name="notageral" value="3" /><label for="star3"><span>&#9733</span></label>
-    <input type="radio" id="star2" name="notageral" value="2" /><label for="star2"><span>&#9733</span></label>
-    <input type="radio" id="star1" name="notageral" value="1" /><label for="star1"><span>&#9733</span></label>
-  </fieldset>
-
-  <fieldset class="rating crit1">
-    <input type="radio" id="star5-crit1" name="notaCrit1" value="5" /><label
-      for="star5-crit1"><span>&#9733</span></label>
-    <input type="radio" id="star4-crit1" name="notaCrit1" value="4" /><label
-      for="star4-crit1"><span>&#9733</span></label>
-    <input type="radio" id="star3-crit1" name="notaCrit1" value="3" /><label
-      for="star3-crit1"><span>&#9733</span></label>
-    <input type="radio" id="star2-crit1" name="notaCrit1" value="2" /><label
-      for="star2-crit1"><span>&#9733</span></label>
-    <input type="radio" id="star1-crit1" name="notaCrit1" value="1" /><label
-      for="star1-crit1"><span>&#9733</span></label>
-  </fieldset>
-
-  <fieldset class="rating crit2">
-    <input type="radio" id="star5-crit2" name="notaCrit2" value="5" /><label
-      for="star5-crit2"><span>&#9733</span></label>
-    <input type="radio" id="star4-crit2" name="notaCrit2" value="4" /><label
-      for="star4-crit2"><span>&#9733</span></label>
-    <input type="radio" id="star3-crit2" name="notaCrit2" value="3" /><label
-      for="star3-crit2"><span>&#9733</span></label>
-    <input type="radio" id="star2-crit2" name="notaCrit2" value="2" /><label
-      for="star2-crit2"><span>&#9733</span></label>
-    <input type="radio" id="star1-crit2" name="notaCrit2" value="1" /><label
-      for="star1-crit2"><span>&#9733</span></label>
-  </fieldset>
-
-  <fieldset class="rating crit3">
-    <input type="radio" id="star5-crit3" name="notaCrit3" value="5" /><label
-      for="star5-crit3"><span>&#9733</span></label>
-    <input type="radio" id="star4-crit3" name="notaCrit3" value="4" /><label
-      for="star4-crit3"><span>&#9733</span></label>
-    <input type="radio" id="star3-crit3" name="notaCrit3" value="3" /><label
-      for="star3-crit3"><span>&#9733</span></label>
-    <input type="radio" id="star2-crit3" name="notaCrit3" value="2" /><label
-      for="star2-crit3"><span>&#9733</span></label>
-    <input type="radio" id="star1-crit3" name="notaCrit3" value="1" /><label
-      for="star1-crit3"><span>&#9733</span></label>
-  </fieldset>
-
-  <fieldset class="rating crit4">
-    <input type="radio" id="star5-crit4" name="notaCrit4" value="5" /><label
-      for="star5-crit4"><span>&#9733</span></label>
-    <input type="radio" id="star4-crit4" name="notaCrit4" value="4" /><label
-      for="star4-crit4"><span>&#9733</span></label>
-    <input type="radio" id="star3-crit4" name="notaCrit4" value="3" /><label
-      for="star3-crit4"><span>&#9733</span></label>
-    <input type="radio" id="star2-crit4" name="notaCrit4" value="2" /><label
-      for="star2-crit4"><span>&#9733</span></label>
-    <input type="radio" id="star1-crit4" name="notaCrit4" value="1" /><label
-      for="star1-crit4"><span>&#9733</span></label>
-  </fieldset>
-
-
-  <br/>
-  <input type="submit" value="Avaliar" />
-</form>
-</div>
-
-<div>
-  {% for comentario in comentarios %}
-  <li>{{ comentario.texto }} <i> {{comentario.user.username}}</i></li>
-  {% if request.user == comentario.user %}
-  <a href="{% url 'main:edit_comment' disciplina.id comentario.id %}">Editar</a>
-  <a href="{% url 'main:delete_comment' disciplina.id comentario.id %}"
-    onclick="return confirm('Deletar comentário?')">Deletar</a>
-  {% endif%} {% endfor %}
-</div>
-{% endblock %}
+  {% endblock %}
