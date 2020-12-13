@@ -1,6 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Count
+# open file & create csvreader
+import csv
+
+
+path = r"/Users/luiferreira/Desktop/Sistemas de Informacao/USPavalia/uspavalia/base_dados.csv"
+
+
+
+
 
 # Create your models here.
 class Disciplina(models.Model):
@@ -9,15 +18,13 @@ class Disciplina(models.Model):
     cred_aula = models.IntegerField()
     cred_trabalho = models.IntegerField()
     ch_total = models.IntegerField()
-    descricao = models.TextField(max_length=500) #programacao
-    programa_resumido = models.TextField(max_length=300)
-    met_avaliacao = models.CharField(max_length=50)
-    crit_avaliacao = models.CharField(max_length=50)
-    recup_avaliacao = models.CharField(max_length=50)
-    bibliografia = models.TextField(max_length=1000)
+    descricao = models.TextField(max_length=5000) #programacao
+    programa_resumido = models.TextField(max_length=5000)
+    bibliografia = models.TextField(max_length=10000)
     
     def __str__(self):
         return self.nome
+
 
 
 class Comentario(models.Model):

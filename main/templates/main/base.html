@@ -8,29 +8,36 @@
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="top">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    <a class="reg" href="{% url 'main:home' %}">
-      <div class="logo">opiniusp</div>
+    <a class=logo href="{% url 'main:home' %}">
+      opiniusp
     </a>
+    <div class=padding></div>
+
     {% if user.is_authenticated %}
-    <div class="user">Bem Vindo, {{user.username}}</div>
-    <div class="regbox">
-      <a class="reg" href="{% url 'accounts:logout' %}">sair</a>
-    </div>
+    <div class=padding></div>
+    <div class="user">Bem Vindo,  {{user.username}}</div>
+    <div class="regbox"><a class="reg" href="{% url 'accounts:logout' %}">sair</a></div>
     {% else %}
+
+    <div class=padding></div>
+
     <div class="regbox">
-      <a class="reg" href="{% url 'accounts:login' %}">login</a>
-      <a class="reg" href="{% url 'accounts:register' %}">register</a>
+      <a class="reg" href="{% url 'accounts:login' %}">Entre</a>
+      <a class="reg" href="{% url 'accounts:register' %}">Registre-se</a>
     </div>
     {% endif %}
   </div>
-  <div class="middle">{% block content %} {% endblock %}</div>
-  <div class="bottom">TESTE</div>
 </body>
+{% block content %} {% endblock %}
 
 </html>
