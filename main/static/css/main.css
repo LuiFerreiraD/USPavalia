@@ -63,7 +63,24 @@
   border: 2px solid var(--honeyellow);
 }
 
+.wrapper input[type=submit]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid var(--honeyellow);
+  padding: 14px 40px;
+  outline: none;
+  font-family: 'Arvo','sans-serif';
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
 
+.wrapper input[type=submit]:hover{
+  background: var(--honeyellow);
+}
 
 /*CADASTRO*/
 /*LOGIN*/
