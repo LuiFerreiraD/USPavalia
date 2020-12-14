@@ -5,7 +5,67 @@
   --middleblue: #5cc6d7;
   --honeyellow: #feb320;
 }
+/*CADASTRO*/
+.wrapper{
+  max-width: 500px;
+  width: 100%;
+  background: #0E121A;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+  border-radius: 25px;
+}
 
+.wrapper .title{
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  font-family: 'Arvo','sans-serif';
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wrapper .form{
+  width: 100%;
+}
+
+.wrapper .form .input_field{
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .form .input_field label{
+  width: 200px;
+  color: white;
+  margin-right: 10px; 
+  font-size: 14px;
+}
+
+.wrapper .form .input_field .input{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  font-family: 'Arvo','sans-serif';
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.wrapper .form .input_field .input:focus{
+  width: 280px;
+  border: 2px solid var(--honeyellow);
+}
+
+
+
+/*CADASTRO*/
 /*LOGIN*/
 
 .box h1{
@@ -67,6 +127,8 @@ border: 2px solid var(--honeyellow);
   background: var(--honeyellow);
 }
 
+/*LOGIN*/
+
 /*PARTE DE CIMA DA PAGINA*/
 .top {
   height: 10%;
@@ -126,7 +188,7 @@ border: 2px solid var(--honeyellow);
   color: white; 
 }
 
-/*---------------------------------------------------PARTE DE CIMA DA PAGINA--------------------------------------------*/
+/*PARTE DE CIMA DA PAGINA*/
 a {
   text-decoration: none;
 }
@@ -168,8 +230,9 @@ body {
   align-items: center;
 }
 
+/*PARTE DE CIMA DA PAGINA*/
+/*PAGINA DA DISCIPLINA*/
 
-/*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
 .disciplina {
   width: 100%;
   font-size: 40px;
@@ -185,8 +248,6 @@ body {
   width: 100%;
   display: flex;
   align-content: flex-start;
-
-
 }
 
 .bloco-infos1{
@@ -294,7 +355,9 @@ hr{
   border: 1px solid white;
 }
 
-/*-------------------------------------------------------COMENTÁRIOS----------------------------------------------------*/
+/*PAGINA DA DISCIPLINA*/
+
+/*COMENTARIOS*/
 
 .container{
   color: snow;
@@ -387,10 +450,8 @@ button{
   text-align: start;
   margin-left: auto;
 }
-
-/*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
-
-
+/*COMENTARIOS*/
+/*BUSCA*/
 .busca {
   height: 30px;
   width: 400px;
@@ -407,7 +468,7 @@ button{
 #busca-dis:focus {
   border: solid 2px var(--oxfordblue);
 }
-
+/*BUSCA*/
 .btn {
   width: 20px;
   height: 100% - 10px;
@@ -420,57 +481,21 @@ h1 {
   color: white;
 }
 
-.wrapper{
-  max-width: 350px;
-  width: 100%;
-  height: auto;
-  background: #0E121A;;
-  padding: 60px 45px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  border-radius: 20px;
+.btn2{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid var(--honeyellow);
+    padding: 14px 40px;
+    outline: none;
+    font-family: 'Arvo','sans-serif';
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
 }
 
-.wrapper .title{
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 26px;
-  font-weight: bold;
-  color: #3aaf9f;
-}
-
-.wrapper .form .input_field{
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.wrapper .form .input_field .input{
-  width: 100%;
-  padding: 12px;
-  padding-left: 30px;
-  border: none;
-  background: #eeeeee;
-}
-
-.wrapper .form .btn{
-  width: 70%;
-  margin: 20px auto 0;
-  background: #3aaf9f;
-  text-align: center;
-  padding: 12px;
-  border-radius: 25px;
-}
-
-.wrapper .form .btn a{
-  color: #fff;
-}
-
-.wrapper .form .input_field i{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 14px;
-  color: #1d2120;
+.btn2:hover{
+  background: var(--honeyellow);
 }
