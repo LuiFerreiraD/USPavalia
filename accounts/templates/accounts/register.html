@@ -1,34 +1,67 @@
 {% extends 'main/base.html' %} {% block content %}
-
-<div class="wrapper">
-  <div class="form">
-    <div class="input_field">
-      <input type="text" placeholder="Name" class="input">
-      <i class="fas fa-user"></i>
-    </div>
-    <div class="input_field">
-      <input type="text" placeholder="Email" class="input">
-      <i class="far fa-envelope"></i>
-    </div>
-    <div class="input_field">
-      <input type="password" placeholder="Password" class="input">
-      <i class="fas fa-lock"></i>
-    </div>
-    <div class="btn">
-      <a href="#">Register</a>
-    </div>
-  </div>
-</div>
-</div>
-
 <!--
-<div class="login">
-  <h3>Crie sua conta</h3>
-  <form action="" method="POST">
-    {% csrf_token %} {{ form.as_p }}
-    <input type="submit" value="Registrar" />
+<div class='wrapper'>
+  <div class='title'>
+    Cadastro
+  </div>
+  <form action="" method="POST" class='form'>
+    {% csrf_token %}
+    <div class="input_field">
+      <label for="id_first_name"></label>
+      <input type="text" id="id_firt_name" placeholder='First Name' class="input">
+    </div>
+    <div class="input_field">
+      <label for="id_last_name"></label>
+      <input type="text" placeholder='Last Name' id="id_last_name" class="input">
+    </div>
+    <div class="input_field">
+      <label for="id_username"></label>
+      <input type="text" placeholder='Usuário' class="input" name="username" id="id_username">
+    </div>
+    <div class="input_field">
+      <label for="id_password1"></label>
+      <input type="password" placeholder='Senha' class="input" name="password" id="id_password1">
+    </div>
+    <div class="input_field">
+      <label for="id_password2"></label>
+      <input type="password" placeholder='Confirme a Senha' class="input" name="password2" id="id_password2">
+    </div>
+    <div class="input_field">
+      <label for="id_email"></label>
+      <input type="email" placeholder='email' class="input" id="id_email">
+    </div>
+    <div class="input_field">
+      <input type="submit" value='Registrar' class=btn2>
+    </div>
   </form>
 </div>
 -->
+
+
+<div class='wrapper'>
+  <div class='title'>
+    Cadastro
+  </div>
+  <form action="" method="POST" class='form'>
+    {% csrf_token %}
+    <p class='input_field'>
+      <input placeholder='usuário' type="text" name="username" maxlength="150" autofocus="" required="" id="id_username"
+        class=input>
+    </p>
+    <p class='input_field'>
+      <input class='input' placeholder='Nome' type="text" name="first_name" maxlength="150" id="id_first_name">
+    </p>
+    <p class='input_field'><input class='input' placeholder='Sobrenome' type="text" name="last_name" maxlength="150"
+        id="id_last_name"></p>
+    <p class='input_field'><input class='input' placeholder='email' type="email" name="email" maxlength="254"
+        id="id_email"></p>
+    <p class='input_field'><input class='input' placeholder='senha' type="password" name="password1"
+        autocomplete="new-password" required="" id="id_password1">
+    </p>
+    <p class='input_field'><input class='input' placeholder='confirme a senha' type="password" name="password2"
+        autocomplete="new-password" required="" id="id_password2"></p>
+    <input type="submit" value="Registrar" />
+  </form>
+</div>
 
 {% endblock %}
