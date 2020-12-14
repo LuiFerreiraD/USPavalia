@@ -467,10 +467,8 @@ button{
   text-align: start;
   margin-left: auto;
 }
-<<<<<<< HEAD
 /*COMENTARIOS*/
 /*BUSCA*/
-=======
 
 /*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
 
@@ -478,10 +476,10 @@ button{
   height: 100vh;
 }
 
->>>>>>> e53c602801bf8a519b2a8edc452c0ebe1f8c419b
 .busca {
   height: 30px;
   width: 400px;
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   background-color: white;
@@ -502,6 +500,21 @@ button{
   background-color: var(--oxfordblue);
   padding: 5px 5px;
   cursor: pointer;
+}
+
+.card-materia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(#000, .1);
+  margin-bottom: 1.6%;
+  background: #fff;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
 }
 
 h1 {
