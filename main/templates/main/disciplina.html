@@ -3,10 +3,31 @@
 <link rel="stylesheet" href="{% static 'css/disciplina.css' %}" />
 {% block content %}
 
-<div class='disciplina'>{{disciplina.nome}}</div>
+<div class='disciplina'>{{disciplina.sigla}} - {{disciplina.nome}}</div>
 
 <div class=bloco-avaliacao>
-  <div class=bloco-infos1>DDDD</div>
+  <div class=bloco-infos1>
+    <h3>Descrição</h3>
+    <div class='text'>
+      {{disciplina.descricao}}
+    </div>
+    <h3>Programa Resumido</h3>
+    <div class='text'>
+      {{disciplina.programa_resumido}}
+    </div>
+    <h3>Créditos</h3>
+    <div class='text'>
+      Créditos Aula: {{disciplina.cred_aula}}
+      <br>
+      Créditos Trabalho: {{disciplina.cred_trabalho}}
+      <br>
+      Créditos Hora Totais: {{disciplina.ch_total}}
+    </div>
+    <h3>Bibliografia</h3>
+    <div class='text'>
+      {{disciplina.bibliografia}}
+    </div>
+  </div>
 
   <div class=bloco-infos2>
     <form action="{% url 'main:add_review' disciplina.id%}" method="POST">

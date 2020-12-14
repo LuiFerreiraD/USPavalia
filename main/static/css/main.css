@@ -270,6 +270,22 @@ body {
 .bloco-infos1{
   height: 100%;
   width: 70%;
+  margin: 1% 5% 1% 5%;
+  border: 5px solid #363738;
+  background: #000E29;
+  color: white;
+  border-radius: 15px;
+  font-family: 'Arvo','sans-serif';
+}
+
+.text{
+  margin: 2%;
+  text-align: justify;
+  align-content: center;
+}
+
+.bloco-infos1 h3{
+  text-align: center;
 }
 
 .bloco-infos2{

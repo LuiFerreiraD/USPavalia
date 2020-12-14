@@ -5,6 +5,8 @@ from .forms import *
 from django.db.models import Avg
 
 # Create your views here.
+
+
 def home(request):
     query = request.GET.get("barra")
     disciplinas = None
@@ -12,7 +14,7 @@ def home(request):
     if query:
         disciplinas = Disciplina.objects.filter(nome__icontains=query)
     else:
-        disciplinas = Disciplina.objects.all()
+        disciplinas = []
 
     contexto = {
         "disciplinas": disciplinas,
@@ -20,16 +22,18 @@ def home(request):
     return render(request, 'main/index.html', contexto)
 
 
-def roundTraditional(val,digits=0):
+def roundTraditional(val, digits=0):
     return round(val+10**(-len(str(val))-1), digits)
 
-#pagina da disciplina
+# pagina da disciplina
+
+
 def pagina_disciplina(request, id):
     disciplina = Disciplina.objects.get(id=id)
     #comentarios = Comentario.objects.filter(disciplina=id).order_by()
 
-    comentarios =  Comentario.objects.filter(disciplina=id).annotate(
-    total_votes=Count('upVote')-Count('downVote')
+    comentarios = Comentario.objects.filter(disciplina=id).annotate(
+        total_votes=Count('upVote')-Count('downVote')
     ).order_by('total_votes')
 
     avaliacoes = Avaliacao.objects.filter(disciplina=id)
@@ -48,15 +52,17 @@ def pagina_disciplina(request, id):
             averages.append(0)
         else:
             averages.append(int(roundTraditional(media)))
-    
+
     ranges = [
-        range(averages[0]), range(averages[1]), range(averages[2]), range(averages[3]), range(averages[4])
+        range(averages[0]), range(averages[1]), range(
+            averages[2]), range(averages[3]), range(averages[4])
     ]
-    
+
     complementos = [
-        range(5-averages[0]), range(5- averages[1]), range(5 - averages[2]), range(5 - averages[3]), range(5 - averages[4])
+        range(5-averages[0]), range(5 - averages[1]), range(5 -
+                                                            averages[2]), range(5 - averages[3]), range(5 - averages[4])
     ]
-    #numero de estrelas preenchidas e não preenchdidas, em cada tupla
+    # numero de estrelas preenchidas e não preenchdidas, em cada tupla
 
     contexto = {
         "disciplina": disciplina,
@@ -66,6 +72,7 @@ def pagina_disciplina(request, id):
     }
 
     return render(request, 'main/disciplina.html', contexto)
+
 
 def add_comentario(request, id):
     if request.user.is_authenticated:
@@ -85,11 +92,13 @@ def add_comentario(request, id):
     else:
         return redirect("accounts:login")
 
+
 def edit_comment(request, disciplina_id, comentario_id):
     if request.user.is_authenticated:
         disciplina = Disciplina.objects.get(id=disciplina_id)
-        comentario = Comentario.objects.get(disciplina=disciplina, id=comentario_id)
-        
+        comentario = Comentario.objects.get(
+            disciplina=disciplina, id=comentario_id)
+
         if request.user == comentario.user:
             if request.method == "POST":
                 form = CommentForm(request.POST, instance=comentario)
@@ -109,13 +118,15 @@ def edit_comment(request, disciplina_id, comentario_id):
 def delete_comment(request, disciplina_id, comentario_id):
     if request.user.is_authenticated:
         disciplina = Disciplina.objects.get(id=disciplina_id)
-        comentario = Comentario.objects.get(disciplina=disciplina, id=comentario_id)
-        
+        comentario = Comentario.objects.get(
+            disciplina=disciplina, id=comentario_id)
+
         if request.user == comentario.user:
             comentario.delete()
         return redirect("main:disciplina", disciplina_id)
     else:
         return redirect("accounts:login")
+
 
 def add_review(request, disciplina_id):
     print('entrou')
@@ -145,7 +156,7 @@ def add_review(request, disciplina_id):
 
 
 def pesquisa_disciplina(request):
-    #função auxiliar para a barra de pesquisa
+    # função auxiliar para a barra de pesquisa
     query = request.GET.get("busca-disc")
     disciplinas = None
     print(query)
