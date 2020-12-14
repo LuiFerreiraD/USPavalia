@@ -6,6 +6,10 @@
   --honeyellow: #feb320;
 }
 
+/* html {
+  height: 100%;
+} */
+
 /*LOGIN*/
 
 .box h1{
@@ -390,10 +394,14 @@ button{
 
 /*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
 
+#main-page {
+  height: 100vh;
+}
 
 .busca {
   height: 30px;
   width: 400px;
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   background-color: white;
@@ -401,10 +409,10 @@ button{
 
 #busca-disc {
   flex-grow: 1;
-  flex-basis: 100% - 50px;
+  flex-basis: calc(100% - 50px);
 }
 
-#busca-dis:focus {
+#busca-disc:focus {
   border: solid 2px var(--oxfordblue);
 }
 
@@ -415,6 +423,21 @@ button{
   padding: 5px 5px;
   cursor: pointer;
 }
+
+.card-materia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(#000, .1);
+  margin-bottom: 1.6%;
+  background: #fff;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+  }
 
 h1 {
   color: white;
