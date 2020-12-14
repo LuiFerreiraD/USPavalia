@@ -6,7 +6,13 @@ from django.db.models import Avg
 
 # Create your views here.
 def home(request):
-    disciplinas = pesquisa_disciplina(request)
+    query = request.GET.get("barra")
+    disciplinas = None
+
+    if query:
+        disciplinas = Disciplina.objects.filter(nome__icontains=query)
+    else:
+        disciplinas = Disciplina.objects.all()
 
     contexto = {
         "disciplinas": disciplinas,
@@ -140,8 +146,9 @@ def add_review(request, disciplina_id):
 
 def pesquisa_disciplina(request):
     #função auxiliar para a barra de pesquisa
-    query = request.GET.get("barra_de_pesquisa")
+    query = request.GET.get("busca-disc")
     disciplinas = None
+    print(query)
 
     if query:
         disciplinas = Disciplina.objects.filter(name__icontains=query)
