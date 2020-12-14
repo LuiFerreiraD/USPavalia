@@ -18,6 +18,8 @@ class Disciplina(models.Model):
     descricao = models.TextField(max_length=5000)  # programacao
     programa_resumido = models.TextField(max_length=5000)
     bibliografia = models.TextField(max_length=10000)
+    met_avaliacao = models.TextField(null=True, blank=True)
+
 
     def __str__(self):
         return self.nome
