@@ -467,8 +467,18 @@ button{
   text-align: start;
   margin-left: auto;
 }
+<<<<<<< HEAD
 /*COMENTARIOS*/
 /*BUSCA*/
+=======
+
+/*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
+
+#main-page {
+  height: 100vh;
+}
+
+>>>>>>> e53c602801bf8a519b2a8edc452c0ebe1f8c419b
 .busca {
   height: 30px;
   width: 400px;
