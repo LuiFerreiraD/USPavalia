@@ -63,16 +63,9 @@
   border: 2px solid var(--honeyellow);
 }
 
-<<<<<<< HEAD
-/* html {
-  height: 100%;
-} */
-
-=======
 
 
 /*CADASTRO*/
->>>>>>> 02b90db739720a6b8ebd781ef9c09301bdde29e5
 /*LOGIN*/
 
 .box h1{
@@ -457,7 +450,6 @@ button{
   text-align: start;
   margin-left: auto;
 }
-<<<<<<< HEAD
 
 /*-------------------------------------------------------PAGINA DA DISCIPLINA-------------------------------------------*/
 
@@ -465,10 +457,6 @@ button{
   height: 100vh;
 }
 
-=======
-/*COMENTARIOS*/
-/*BUSCA*/
->>>>>>> 02b90db739720a6b8ebd781ef9c09301bdde29e5
 .busca {
   height: 30px;
   width: 400px;
