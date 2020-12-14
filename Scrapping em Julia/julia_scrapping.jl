@@ -245,7 +245,7 @@ s = Selector("tbody > tr:nth-child(5) > td > font > span > b")
 disciplina = strip(eachmatch(s, dados_gerais)[1][1].text)
 s = Selector("tbody > tr:nth-child(6) > td > font > span")
 disciplina_en =  strip(eachmatch(s, dados_gerais)[1][1].text)
-
+println("Dados gerais alcançados")
 
 
 ## Creditos ##
@@ -264,6 +264,7 @@ for i = 1:4
     valor = strip(eachmatch(s_valor, creditos)[1][1].text)
     creditos_dict[nome] = valor
 end
+println("Creditos avaliados")
 
 ## Requisitos ##
 disc_ex = "https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=PTC3213&verdis=1"
@@ -272,3 +273,4 @@ url_requisitos =
     "https://uspdigital.usp.br/jupiterweb/listarCursosRequisitos?coddis=$codigo_disciplina"
 r = HTTP.get(url)
 h = Gumbo.parsehtml(decode(r.body, enc"ISO-8859-1"))
+println("Requisitos alcançados")
