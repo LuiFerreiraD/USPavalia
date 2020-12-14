@@ -2,16 +2,23 @@
 {% load static %}
 {% block content %}
 
-
-<form class=busca>
-    <input type="search" id="busca-disc" list="sugestoes-pesquisa"
+<div id="main-page">
+<form method="GET" action="." class=busca>
+    <input type="text" id="busca-disc" name="barra" list="sugestoes-pesquisa"
     placeholder="Pesquisar disciplina...">
-    <img src="{% static 'main/images/lupa.png' %}" class="btn">
-    <datalist id="sugestoes-pesquisa">
+    <input type="image" class="btn" src="{% static 'main/images/lupa.png' %}">
+    </input>
+    <!-- <datalist id="sugestoes-pesquisa">
         <option value="Sistemas a eventos discretos"></option>
-    </datalist>
+    </datalist> -->
 </form>
 
 {%for disci in disciplinas%}
+<div class="card-materia">
 <a class=disc href="{%url 'main:disciplina' disci.id %}">{{disci.nome}}</a>
-{% endfor %} {% endblock %}
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
